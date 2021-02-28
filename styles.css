@@ -17,6 +17,7 @@ body {
   font-family: "Alata", sans-serif;
   font-size: 15px;
   color: var(--black);
+  z-index: -1;
 }
 
 header {
@@ -26,4 +27,221 @@ header {
   background-position: center;
   background-size: cover;
   color: var(--white);
+  z-index: 1;
+}
+
+header .dark-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nav-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4.5rem 7.5rem;
+}
+.nav-bar img {
+  z-index: 10;
+}
+.nav-bar ul {
+  list-style: none;
+  z-index: 10;
+}
+
+.nav-bar ul li {
+  display: inline-block;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: var(--white);
+  margin: 0 10px;
+  padding: 5px;
+}
+
+header .hero-text {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 30px 73px 20px 25px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 5rem;
+  margin-left: 7.5rem;
+  margin-top: 2.9rem;
+  border: 2px solid var(--white);
+  z-index: 10;
+}
+
+.main-container {
+  background: var(--white);
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container .interactive-content {
+  position: relative;
+  margin-bottom: 7rem;
+}
+
+.interactive-content .interactive-text {
+  position: absolute;
+  background: var(--white);
+  padding: 5rem;
+  right: 0;
+  top: 36%;
+  width: 500px;
+}
+
+.interactive-text .headline-text {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.interactive-text .text-content {
+  color: var(--dark-gray);
+  width: 420px;
+  font-size: 14px;
+  line-height: 1.5rem;
+}
+
+.main-container .grid-items {
+  height: 1100px;
+}
+
+.main-container .grid-items .header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.header-section p {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  margin-top: 7px;
+}
+
+.header-section button {
+  text-transform: uppercase;
+  padding: 10px 2.5rem;
+  border: 2px solid var(--black);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.header-section button:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.grid-items .grid-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.grid-images .img-gallery {
+  cursor: pointer;
+  position: relative;
+}
+
+.img-gallery::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 -170px 100px rgba(0, 0, 0, 0.7);
+}
+
+.img-gallery:hover::after {
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.4s ease-in-out;
+  box-shadow: none;
+}
+
+.img-gallery:hover p {
+  color: var(--black);
+  z-index: 100;
+  opacity: 1;
+}
+
+.img-gallery img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+
+.img-gallery p {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  z-index: 1;
+}
+
+footer {
+  background: var(--black);
+  padding: 3rem 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .footer-nav ul {
+  list-style: none;
+}
+
+.footer-nav ul li {
+  display: inline-block;
+  margin: 20px 20px 0 0;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 400;
+}
+
+footer .social-media-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.social-media-links .icons a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.social-media-links p {
+  color: var(--dark-gray);
+  margin-top: 20px;
 }
