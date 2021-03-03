@@ -2,7 +2,7 @@
   --white: #fff;
   --black: #000;
   --dark-gray: hsl(0, 0%, 55%);
-  --vary-dark-gray: hsl(0, 0%, 41%);
+  --very-dark-gray: hsl(0, 0%, 41%);
 }
 
 * {
@@ -18,6 +18,7 @@ body {
   font-size: 15px;
   color: var(--black);
   z-index: -1;
+  overflow-y: scroll;
 }
 
 header {
@@ -86,6 +87,51 @@ header .dark-overlay {
 
 .hero-section button {
   cursor: pointer;
+}
+
+.mobile-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--black);
+  z-index: 100;
+  display: none;
+}
+
+.mobile-nav-bar .mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3rem 2rem;
+}
+
+.mobile-nav-bar .mobile-header i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mobile-nav-bar ul {
+  position: absolute;
+  top: 60%;
+  margin-left: 2rem;
+  transform: translateY(-50%);
+  list-style: none;
+}
+
+.mobile-nav-bar ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-nav-bar ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
 }
 
 header .nav-bar i,
@@ -308,8 +354,12 @@ footer .social-media-links {
     margin-bottom: 100px;
   }
 
+  header .dark-overlay {
+    display: none;
+  }
+
   header .nav-bar {
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
 
   header .nav-bar ul {
@@ -321,8 +371,12 @@ footer .social-media-links {
     display: block;
   }
 
+  header .mobile-nav-bar.show {
+    display: block;
+  }
+
   header .hero-text {
-    margin-left: 3rem;
+    margin-left: 2rem;
     font-size: 4rem;
   }
 
@@ -412,5 +466,31 @@ footer .social-media-links {
 
   footer .social-media-links .icons a {
     margin: 10px;
+  }
+}
+
+@media (max-width: 572px) {
+  header .hero-text {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  header .hero-text {
+    font-size: 3rem;
+    padding: 30px 30px 20px 25px;
+  }
+}
+
+@media (max-width: 432px) {
+  header .hero-text {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header .hero-text {
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 }
